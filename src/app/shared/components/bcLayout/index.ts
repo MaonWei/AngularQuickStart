@@ -1,0 +1,1 @@
+export * from './bcLayout.component';
