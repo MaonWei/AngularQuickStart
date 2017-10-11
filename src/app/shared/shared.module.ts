@@ -10,7 +10,8 @@ import {
     BcNavItemComponent,
     BcNotFoundPageComponent,
     BcPageTopComponent,
-    BcSidenavComponent
+    BcSidenavComponent,
+    BcTopBarComponent
     
   } from './components';
 
@@ -20,7 +21,8 @@ import {
     BcNavItemComponent,
     BcNotFoundPageComponent,
     BcPageTopComponent,
-    BcSidenavComponent
+    BcSidenavComponent,
+    BcTopBarComponent
   ];
 
   @NgModule({

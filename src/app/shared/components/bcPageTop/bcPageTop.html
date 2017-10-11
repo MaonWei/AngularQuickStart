@@ -1,9 +1,10 @@
 <md-toolbar color="primary">
-    <button md-icon-button (click)="openMenu.emit()">
-      <md-icon>menu</md-icon>
-    </button>
-    <span>{{appName}}</span>
-    <ng-content></ng-content>
-  </md-toolbar>
-
-  
+    <div  class="container">        
+      <button md-icon-button (click)="openMenu.emit()">
+          <md-icon>menu</md-icon>
+        </button>
+      <span>{{appName}}</span>       
+      <ng-content></ng-content>
+      <bc-page-top-bar></bc-page-top-bar>
+   </div>
+</md-toolbar>

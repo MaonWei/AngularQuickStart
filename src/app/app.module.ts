@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 // components
 import { AppComponent } from './app.component';
 import { NgcModule } from './shared/shared.module';
+import { PagesModule } from './pages/pages.module';
 
 // routing
 import { routing } from './app.routing';
@@ -27,7 +28,7 @@ import { DBModule } from '@ngrx/db';
 import { schema } from './config/db';
 
 // guards
-import { AuthenticatedGuard} from "./shared/authenticated.guard";
+import { AuthGuard} from "./core/guards/index";
 
 // reducers
 //import { reducer } from "./app.reducers";
@@ -49,10 +50,12 @@ import { AuthenticatedGuard} from "./shared/authenticated.guard";
     CustomMaterialModule,
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     DBModule.provideDB(schema),   
-    
+    PagesModule,
     routing
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

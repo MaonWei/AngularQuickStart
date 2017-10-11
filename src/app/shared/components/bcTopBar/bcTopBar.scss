@@ -1,4 +1,5 @@
 .container {
     display: flex; /* or inline-flex */
-    margin: 0px 100px 0px 0px;
+    flex-direction: row ;
+    flex-grow: 2; 
   }

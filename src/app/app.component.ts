@@ -6,8 +6,8 @@ import { Store } from '@ngrx/store';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['./app.component.css']
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class AppComponent {
   title = 'app';

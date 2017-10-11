@@ -4,11 +4,7 @@ import { ModuleWithProviders } from '@angular/core';
 import { BcNotFoundPageComponent } from './shared/components/bcNotFound/bcNotFoundPage.Component';
 
 export const routes: Routes = [
-  // { path: '', redirectTo: '/books', pathMatch: 'full' },
-  // {
-  //   path: 'books',
-  //   loadChildren: './books/books.module#BooksModule',  
-  // },
+  { path: '', redirectTo: 'pages', pathMatch: 'full' },
   { path: '**', component: BcNotFoundPageComponent },
 ];
 
