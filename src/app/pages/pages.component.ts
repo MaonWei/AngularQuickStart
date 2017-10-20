@@ -1,38 +1,48 @@
 import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
+import 'rxjs/add/operator/let';
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
 
+import * as fromRoot from '../reducers';
+import * as layout from '../actions/layout';
 
 @Component({
   selector: 'pages',
   template: `
   <bc-layout>
-  <bc-sidenav [open]="showSidenav$ | async">  
-  <bc-nav-item (navigate)="closeSidenav()" *ngIf="loggedIn$ | async" routerLink="/" icon="book" hint="View your book collection">
-  My Collection
-</bc-nav-item>
-<bc-nav-item (navigate)="closeSidenav()" *ngIf="loggedIn$ | async" routerLink="/books/find" icon="search" hint="Find your next book!">
-  Browse Books
-</bc-nav-item>
-<bc-nav-item (navigate)="closeSidenav()" *ngIf="!(loggedIn$ | async)">
-  Sign In
-</bc-nav-item>
-<bc-nav-item (navigate)="logout()" *ngIf="loggedIn$ | async">
-  Sign Out
-</bc-nav-item>
-  </bc-sidenav>
-  <bc-page-top appName="Mason" (openMenu)="openSidenav()">    
+  <bc-page-top appName="Mason" (openMenu)="openSidenav()">
   </bc-page-top>
-  <router-outlet></router-outlet>  
-</bc-layout>   
-    
-    `
+  <md-sidenav-container fxFlex>
+  <bc-sidenav [open]="showSidenav$ | async">
+      <bc-nav-item (navigate)="closeSidenav()"  routerLink="/" icon="book" hint="dashbord">
+      Dashboard
+    </bc-nav-item>
+    <bc-nav-item (navigate)="closeSidenav()" routerLink="/pages/accounts" icon="search" >
+     Accounts
+    </bc-nav-item>
+    <bc-nav-item (navigate)="closeSidenav()" routerLink="/pages/orders" icon="search" >
+    Orders
+   </bc-nav-item>
+  </bc-sidenav>
+  <!-- this flex item takes the rest of the screen in height -->
+
+  <router-outlet></router-outlet>
+  </md-sidenav-container>
+</bc-layout>
+    `,
+    styleUrls: ['./pages.scss']
 })
 export class Pages {
-
-  constructor() {
+  showSidenav$: Observable<boolean>;
+  constructor(private store: Store<fromRoot.State>) {
+    this.showSidenav$=this.store.select(fromRoot.getShowSidenav)
   }
 
-  ngOnInit() {
-    
+  closeSidenav() {
+   this.store.dispatch(new layout.CloseSidenavAction());
+  }
+  openSidenav() {
+    this.store.dispatch(new layout.OpenSidenavAction());
   }
 }

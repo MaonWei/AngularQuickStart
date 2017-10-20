@@ -1,0 +1,27 @@
+.example-header-image {
+    background-image: url('../../../assets/img/examples/shiba2.jpg');
+    background-size: cover;  
+  }
+  .splitline{
+    border: solid 1px #c6e;
+    height:50px;
+    }
+
+    .accountsItmes{
+        padding: 0 10px;
+        .item_circle{
+            width:40px;
+            height:40px;            
+            border-radius:99em;          
+            background-color:yellowgreen;
+            text-align: center;
+            vertical-align: middle;   
+            padding: 3px;         
+            color: #fff;
+        }
+    }
+
+    .accountContent{
+        background-color: #E0E3EE;
+        padding: 10px;
+    }

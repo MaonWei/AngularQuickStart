@@ -1,0 +1,70 @@
+<md-sidenav-container fxFlex>
+<md-sidenav align="end" mode="side" opened #sidenav class="mat-elevation-z6">
+    <md-tab-group>
+      <md-tab label="About Me">
+        <div class="flex-container" fxLayout="column" fxLayoutAlign="start stretch">
+          <md-card>
+            <md-card-title>Name</md-card-title>
+            <md-card-content>
+              <p>{{selectedModel?.name}}</p>
+            </md-card-content>
+          </md-card>
+          <md-card>
+            <md-card-title>Status</md-card-title>
+            <md-card-content>
+              <p>{{selectedModel?.status}}</p>
+            </md-card-content>
+          </md-card>
+          <md-card>
+            <md-card-title>About</md-card-title>
+            <md-card-content>
+              <p>{{selectedModel?.about}}</p>
+            </md-card-content>
+          </md-card>
+        </div>
+        <div class="tab-action">
+          <button md-fab (click)="sidenav.close()" color="warning">
+            <md-icon>close</md-icon>
+          </button>
+        </div>
+      </md-tab>
+      <md-tab label="Messages">
+        <div class="flex-container" fxLayout="column" fxLayoutAlign="start stretch">
+          <md-card *ngFor="let message of selectedModel?.messages">
+            <md-card-subtitle>{{message.who}} says:</md-card-subtitle>
+            <md-card-content>{{message.message}}</md-card-content>
+          </md-card>
+        </div>
+
+        <div class="tab-action">
+          <div class="flex-container" fxLayout="column" fxLayoutAlign="space-between center">
+            <button md-mini-fab (click)="sidenav.close()" color="warning">
+              <md-icon>close</md-icon>
+            </button>
+            <button md-fab (click)="addMessage()" color="primary">
+              <md-icon>add</md-icon>
+            </button>
+          </div>
+        </div>
+      </md-tab>
+      <md-tab label="Photos">
+        some photos here...
+      </md-tab>
+    </md-tab-group>
+  </md-sidenav>
+
+<md-grid-list cols="4" rowHeight="250px">
+  <md-grid-tile *ngFor="let model of models" [attr.rowspan]="model.rows"  [attr.colspan]="model.cols">
+    <img src="assets/img/examples/{{model.name}}.jpg" alt="model {{model.name}}">
+    <!-- new footer! -->
+    <md-grid-tile-footer>
+      <h3 md-line>{{model.name}}</h3>
+      <span md-line>{{model.status}}</span>
+      <button md-icon-button (click)="showDetails(model)">
+        <md-icon>info</md-icon>
+      </button>
+    </md-grid-tile-footer>
+
+  </md-grid-tile>
+</md-grid-list>
+</md-sidenav-container>

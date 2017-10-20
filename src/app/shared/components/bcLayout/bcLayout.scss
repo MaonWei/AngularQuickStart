@@ -1,8 +1,11 @@
-md-sidenav-container {
-    background: rgba(0, 0, 0, 0.03);
-  }
-  
-//   *, /deep/ * {
-//     -webkit-font-smoothing: antialiased;
-//     -moz-osx-font-smoothing: grayscale;
-//   }
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.app{
+  height: 100vh;    // emmet h100vh
+  background: rgba(0, 0, 0, 0.03);
+}
+

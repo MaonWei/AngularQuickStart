@@ -1,4 +1,5 @@
-<md-sidenav-container fullscreen>
-        <ng-content></ng-content>
-</md-sidenav-container>
+<!-- flex container displaying children as a column -->
+<section [class.dark-theme]="isDarkTheme"  class="app flex-container" fxLayout="column" fxLayoutAlign="start stretch">
+         <ng-content></ng-content>
+</section>
    

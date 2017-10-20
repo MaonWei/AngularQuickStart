@@ -1,7 +1,7 @@
-import { NgModule }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { routing }       from './pages.routing';
+import { routing }from './pages.routing';
 import { NgcModule } from '../shared/shared.module';
 import { CustomMaterialModule } from './../app.materialModule';
 //import { AppTranslationModule } from '../app.translation.module';

@@ -1,0 +1,58 @@
+
+<md-card>
+    <md-card-header>沃颜试用装登记申请单product free registration</md-card-header>
+    <md-card-content>
+        <form class="example-container">
+        <md-form-field>
+          <input mdInput placeholder="姓名Name">
+        </md-form-field>
+        <md-form-field>
+          <input mdInput placeholder="电话号码phone">
+        </md-form-field>
+  
+        <table cellspacing="5">
+          <tr>
+            <td>
+              <md-form-field>
+                <input mdInput placeholder="省份Province">
+              </md-form-field>
+            </td>
+            <td>
+              <md-form-field>
+                <input mdInput placeholder="市区City">
+              </md-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <md-form-field>
+                <input mdInput placeholder="县/区State">
+              </md-form-field>
+            </td>
+            <td>
+              <md-form-field>
+                <input mdInput #postalCode maxlength="6" placeholder="邮编Postal Code">
+                <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+              </md-form-field>
+            </td>
+  
+          </tr>
+        </table>
+        <md-form-field>
+          <textarea mdInput placeholder="地址Address"></textarea>
+        </md-form-field>
+        <md-form-field>
+          <textarea mdInput placeholder="地址Address 2"></textarea>
+        </md-form-field>
+        <div class="button-row">
+            <button md-raised-button>取消cancel</button>
+            <button md-raised-button color="primary">提交ok</button>         
+          </div>
+      </form>
+    </md-card-content>
+    <md-card-actions>
+  
+    </md-card-actions>
+  </md-card>
+  
+  
